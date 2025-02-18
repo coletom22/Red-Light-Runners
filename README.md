@@ -37,15 +37,15 @@ The goals of this project are develop a working prototype under relatively speci
 2. The driver must be the first car in the intersection.
 
 ### Project Stages
-[ ] Stop light detection (SLD) for red yellow and green
-[ ] Cross-traffic in intersection detection (CTD)
-[ ] Combine SLD and CTD
-  Assumed low success rate due to left-arrow traffic, oncoming traffic, and lane confusion
-[ ] Lane detection (LD)
-  By determining the lane the car is currently in, the system can rely on SLD and LD to follow laws of traffic
-[ ] Combine LD with SLD and CTD
-[ ] Momentum detection (MD)
-  Tagging cross-traffic cars, estimate if cars are *not* slowing down
+- [ ] Stop light detection (SLD) for red yellow and green
+- [ ] Cross-traffic in intersection detection (CTD)
+- [ ] Combine SLD and CTD
+  - Assumed low success rate due to left-arrow traffic, oncoming traffic, and lane confusion
+- [ ] Lane detection (LD)
+  - By determining the lane the car is currently in, the system can rely on SLD and LD to follow laws of traffic
+- [ ] Combine LD with SLD and CTD
+- [ ] Momentum detection (MD)
+  - Tagging cross-traffic cars, estimate if cars are *not* slowing down
 
 ## Data
 Test
