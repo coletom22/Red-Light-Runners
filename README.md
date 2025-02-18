@@ -14,6 +14,11 @@ This project aims to develop software that alerts drivers of potential red-light
 ## About
 ![All clear](images/clear-traffic-animation.gif)
 ![RLR](images/rlr-animation.gif)
+
+<p align="center">
+  <img src="images/rlr-animation.gif" width="400">
+</p>
+
 ## Scoping
 The goals of this project are develop a working prototype under relatively specific conditions.
 1. The system is designed to only alert the driver of RLRs from *perpendicular* traffic.
