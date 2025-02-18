@@ -31,10 +31,18 @@ Note that in both instances, the system checks for cars in the intersection afte
 </p>
 
 
-## Scoping
+## Scope
 The goals of this project are develop a working prototype under relatively specific conditions.
 1. The system is designed to only alert the driver of RLRs from *perpendicular* traffic.
 2. The driver must be the first car in the intersection.
+3. Data will initially be collected from the Roseville area and expanded once the system is sufficiently accurate (alerts driver ~80% of the time)
+
+#### Potential Dashcams
+| Dashcam Model        | Price   | Memory | Features                                              | Rating  | Link  |
+|----------------------|---------|--------|------------------------------------------------------|---------|-------|
+| **COOLCRAZY Dashcam** | $99.99  | 64G    | 4K, 1080p, 170° front camera angle, night vision(?) | 8.5/10  | [Amazon](https://www.amazon.com/COOLCRAZY-Camera-Control-Parking-Monitor/dp/B0DFM5WG8X) |
+| **GMAIPOP Dashcam**  | $74.99  | 64G    | 4K, 2160p, 170° front camera angle, night vision     | 9/10    | [Amazon](https://www.amazon.com/Camera-Dashboard-Recorder-Parking-Recording/dp/B0CC9G8G9Q) |
+
 
 ### Project Stages
 - [ ] Stop light detection (SLD) for red yellow and green
