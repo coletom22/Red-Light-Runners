@@ -12,13 +12,13 @@ This project aims to develop software that alerts drivers of potential red-light
 
 
 ## About
-Test
+![All clear](images/render.mp4)
 
 ## Scoping
 The goals of this project are develop a working prototype under relatively specific conditions.
 1. The system is designed to only alert the driver of RLRs from *perpendicular* traffic.
 2. The driver must be the first car in the intersection
-![Alt text](images/red-light-runner.gif)
+    ![Alt text](images/red-light-runner.jpeg)
 
 ## Data
 Test
