@@ -12,12 +12,19 @@ This project aims to develop software that alerts drivers of potential red-light
 
 
 ## About
-![All clear](images/clear-traffic-animation.gif)
-![RLR](images/rlr-animation.gif)
 
 <p align="center">
-  <img src="images/rlr-animation.gif" width="400">
+  <img src="images/clear-traffic-animation.gif" width="340">
+  <br>
+  <b>Animation showing normal traffic flow without an RLR event</b>
 </p>
+
+<p align="center">
+  <img src="images/rlr-animation.gif" width="340">
+  <br>
+  <b>Animation showing the system detecting an RLR event and alerting the driver</b>
+</p>
+
 
 ## Scoping
 The goals of this project are develop a working prototype under relatively specific conditions.
