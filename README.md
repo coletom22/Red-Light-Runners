@@ -5,7 +5,7 @@ This project aims to develop software that alerts drivers of potential red-light
 ## Table of Contents
 - [About](#about)
 - [Example Animation](#animation)
-- [Scoping](#scope)
+- [Scope](#scope)
 - [Data](#data)
 - [Modeling](#modeling)
 - [Deployment](#deployment)
@@ -63,7 +63,7 @@ The goal of this project is to develop a working prototype under specific condit
 * Edit footage, removing the following scenes:
   - no traffic lights
   - car is not the front of the traffic stop
-* BBox and Label red, yellow, and green traffic lights
+* BBox and label red, yellow, and green traffic lights
 
 ### Stage 2 - CTD Data Collection
 * Collect 3 hours of **daytime** dashcam footage
@@ -76,13 +76,13 @@ The goal of this project is to develop a working prototype under specific condit
 
 ### Stage 3 - CTD Data Augmentation
 * Use any of the following tools to insert cross traffic cars in both red and green light scenarios:
-  | Tool           | Description                           | Best For                          | Choice
+  | Tool           | Description                           | Best For                          | Used Yet? (y/n) |
   |---------------|-----------------------------------|----------------------------------|---------------|
-  | **Adobe Firefly** | AI generative fill in Photoshop. | Seamlessly adding cars to traffic. | [ ] |
-  | **Runway ML**  | AI inpainting for object removal/addition. | Placing multiple cars realistically. | [ ] |
-  | **Leonardo.Ai** | AI-generated vehicles & backgrounds. | Creating varied cars for overlays. | [ ] |
-  | **DreamStudio** | Stable Diffusion XL image generation. | Generating full traffic scenes. | [ ] |
-* BBox and Label cross traffic cars
+  | **Adobe Firefly** | AI generative fill in Photoshop. | Seamlessly adding cars to traffic. | No |
+  | **Runway ML**  | AI inpainting for object removal/addition. | Placing multiple cars realistically. | No |
+  | **Leonardo.Ai** | AI-generated vehicles & backgrounds. | Creating varied cars for overlays. | No |
+  | **DreamStudio** | Stable Diffusion XL image generation. | Generating full traffic scenes. | No |
+* BBox and label cross traffic cars
 
 
 ## Modeling
@@ -94,4 +94,4 @@ ByteTrack handles occlusions well and is more accurate than SORT in crowded scen
 
 ## Deployment
 
-Test
+TBD
