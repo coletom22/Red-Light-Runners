@@ -5,7 +5,7 @@ This project aims to develop software that alerts drivers of potential red-light
 ## Table of Contents
 - [About](#about)
 - [Example Animation](#animation)
-- [Scoping](#scoping)
+- [Scoping](#scope)
 - [Data](#data)
 - [Modeling](#modeling)
 - [Deployment](#deployment)
@@ -56,23 +56,40 @@ The goals of this project are develop a working prototype under relatively speci
   - Tagging cross-traffic cars, estimate if cars are *not* slowing down
 
 ## Data
-Test
+### Stage 1 - SLD Data Collection
+* Collect 2 hours of **daytime** dashcam footage
+  - 1 hour in *high* trafficked areas
+  - 1 hour in *low* trafficked areas
+* Edit footage, removing the following scenes:
+  - no traffic lights
+  - car is not the front of the traffic stop
+* BBox and Label red, yellow, and green traffic lights
 
+### Stage 2 - CTD Data Collection
+* Collect 3 hours of **daytime** dashcam footage
+  - 1.5 hours in *high* trafficked areas
+  - 1.5 hours of *low* trafficked areas
+* Edit footage, removing the following scenes:
+  - no traffic lights
+  - car is not the front of the traffic stop
+  - oncoming traffic turning left
 
-
-
-
-
-
-
-
-
-
+### Stage 3 - CTD Data Augmentation
+* Use any of the following tools to insert cross traffic cars in both red and green light scenarios:
+  | Tool           | Description                           | Best For                          | Choice
+  |---------------|-----------------------------------|----------------------------------|---------------|
+  | **Adobe Firefly** | AI generative fill in Photoshop. | Seamlessly adding cars to traffic. | [ ] |
+  | **Runway ML**  | AI inpainting for object removal/addition. | Placing multiple cars realistically. | [ ] |
+  | **Leonardo.Ai** | AI-generated vehicles & backgrounds. | Creating varied cars for overlays. | [ ] |
+  | **DreamStudio** | Stable Diffusion XL image generation. | Generating full traffic scenes. | [ ] |
+* BBox and Label cross traffic cars
 
 
 ## Modeling
+**YOLOv8 + ByteTrack**
 
-Test
+YOLOv8 comes in different sizes that can be optimized for speed for real-time alerts.
+ByteTrack handles occlusions well and is more accurate than SORT in crowded scenes. While it is slower than SORT, the higher accuracy will be valuable in dense traffic situations.
 
 
 ## Deployment
