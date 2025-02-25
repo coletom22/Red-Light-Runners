@@ -5,7 +5,7 @@ import os
 IMAGE_WIDTH, IMAGE_HEIGHT = 768, 448
 
 # Directory to pull raw images from
-raw_dir = "../data/images/raw"
+raw_dir = "../data/images/frames"
 # Directory to place images once processed (resized and annotated)
 processed_dir = "../data/images/processed"
 
