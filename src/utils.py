@@ -1,11 +1,16 @@
 import cv2
 import os
+
+# variables
+# Standardized image width/height
+IMAGE_WIDTH, IMAGE_HEIGHT = 768, 448
+
 # function for converting rectangle points and class value to YOLO format
 def viewing_to_yolo(annotations, IMAGE_WIDTH, IMAGE_HEIGHT) -> list[dict]:
     yolo_annotations = []
 
     for ann in annotations:
-        x1, x2, y1, y2, class_id = ann['x1'], ann['x2'], ann['y1'], ann['y2'], ann['class_id']
+        x1, x2, y1, y2, class_id = ann['x1'], ann['x2'], ann['y1'], ann['y2'], ann['class']
 
         # compute yolo format values
         x_center = (x1 + x2) / 2 / IMAGE_WIDTH
@@ -18,7 +23,7 @@ def viewing_to_yolo(annotations, IMAGE_WIDTH, IMAGE_HEIGHT) -> list[dict]:
     return yolo_annotations
 
 # function for converting a video into individual frames and storing in separate directory
-def video_to_frames(video_path, target_directory):
+def video_to_frames(video_path, target_directory, video_name):
     # Open video file
     cap = cv2.VideoCapture(video_path)
     
@@ -41,7 +46,7 @@ def video_to_frames(video_path, target_directory):
         if not ret:
             break
         
-        frame_filename = os.path.join(target_directory, f"frame_{frame_count:06d}.png")
+        frame_filename = os.path.join(target_directory, f"{video_name}_{frame_count:06d}.jpg")
         cv2.imwrite(frame_filename, frame)
         frame_count += 1
     
