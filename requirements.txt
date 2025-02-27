@@ -1,1 +1,9 @@
-opencv-python
+numpy==2.2.3
+opencv-python==4.11.0.86
+matplotlib-inline==0.1.7
+psutil==7.0.0
+pygments==2.19.1
+python-dateutil==2.9.0.post0
+pyzmq==26.2.1
+tornado==6.4.2
+traitlets==5.14.3
