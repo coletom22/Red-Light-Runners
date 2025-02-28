@@ -1,5 +1,6 @@
 venv
 data/images
 data/labels
+data/model_data
 data/videos
 src/__pycache__
