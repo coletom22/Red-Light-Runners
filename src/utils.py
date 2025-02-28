@@ -64,6 +64,8 @@ def dump_data():
     label_train_dir = '../data/model_data/labels/train'
     label_val_dir = '../data/model_data/labels/validation'
 
+    label_dir = '../data/model_data/labels'
+
     for file in os.listdir(img_train_dir):
         try:
             shutil.move(os.path.join(img_train_dir, file), os.path.join(img_dest_dir, file))
@@ -91,3 +93,8 @@ def dump_data():
 
         except Exception as e:
             print(f"Could not move {file}")
+
+    if os.path.exists(os.path.join(label_dir, 'train.cache')):
+        os.remove(os.path.join(label_dir, 'train.cache'))
+    if os.path.exists(os.path.join(label_dir, 'validation.cache')):
+        os.remove(os.path.join(label_dir, 'validation.cache'))
