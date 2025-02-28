@@ -1,6 +1,6 @@
 import cv2
 import os
-
+import shutil
 # variables
 # Standardized image width/height
 IMAGE_WIDTH, IMAGE_HEIGHT = 768, 448
@@ -52,3 +52,42 @@ def video_to_frames(video_path, target_directory, video_name):
     
     cap.release()
     print(f"Extracted {frame_count} frames at {fps} FPS.")
+
+# function to move data out of model training stage
+def dump_data():
+    img_dest_dir = '../data/images/processed'
+    label_dest_dir = '../data/labels/formatted'
+
+    img_train_dir = '../data/model_data/images/train'
+    img_val_dir = '../data/model_data/images/validation'
+
+    label_train_dir = '../data/model_data/labels/train'
+    label_val_dir = '../data/model_data/labels/validation'
+
+    for file in os.listdir(img_train_dir):
+        try:
+            shutil.move(os.path.join(img_train_dir, file), os.path.join(img_dest_dir, file))
+
+        except Exception as e:
+            print(f"Could not move {file}")
+
+    for file in os.listdir(img_val_dir):
+        try:
+            shutil.move(os.path.join(img_val_dir, file), os.path.join(img_dest_dir, file))
+
+        except Exception as e:
+            print(f"Could not move {file}")
+    
+    for file in os.listdir(label_train_dir):
+        try:
+            shutil.move(os.path.join(label_train_dir, file), os.path.join(label_dest_dir, file))
+
+        except Exception as e:
+            print(f"Could not move {file}")
+        
+    for file in os.listdir(label_val_dir):
+        try:
+            shutil.move(os.path.join(label_val_dir, file), os.path.join(label_dest_dir, file))
+
+        except Exception as e:
+            print(f"Could not move {file}")
