@@ -98,3 +98,15 @@ def dump_data():
         os.remove(os.path.join(label_dir, 'train.cache'))
     if os.path.exists(os.path.join(label_dir, 'validation.cache')):
         os.remove(os.path.join(label_dir, 'validation.cache'))
+
+
+def reset_selection(annotations):
+    for ann in annotations:
+        ann['thickness'] = 1
+    print("Annotations reset")
+
+def remove_bbox(annotations):
+    for ann in annotations[:]:
+        if ann['thickness'] == 2:
+            annotations.remove(ann)
+    print(annotations)
