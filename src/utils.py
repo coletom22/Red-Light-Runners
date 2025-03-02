@@ -1,6 +1,11 @@
 import cv2
 import os
 import shutil
+from ultralytics import YOLO
+import sys
+from sklearn.model_selection import train_test_split
+
+
 # variables
 # Standardized image width/height
 IMAGE_WIDTH, IMAGE_HEIGHT = 768, 448
@@ -110,3 +115,75 @@ def remove_bbox(annotations):
         if ann['thickness'] == 2:
             annotations.remove(ann)
     print(annotations)
+
+# function that moves files to train and validation dirs
+def train_val_split(img_source_dir, label_source_dir, img_train_dir, label_train_dir,  img_val_dir, label_val_dir, train_percent=0.8):
+    img_files = os.listdir(img_source_dir)
+
+    train_files, val_files = train_test_split(img_files, test_size = 1-train_percent, random_state=42)
+
+    for file in train_files:
+        img_source_path = os.path.join(img_source_dir, file)
+        img_dest_path = os.path.join(img_train_dir, file)
+
+        label_file = os.path.splitext(file)[0] + '.txt'
+        label_source_path = os.path.join(label_source_dir, label_file)
+        label_dest_path = os.path.join(label_train_dir, label_file)
+        try:
+            shutil.move(img_source_path, img_dest_path)
+            print(f"Moved {file} to image/train/")
+            shutil.move(label_source_path, label_dest_path)
+            print(f"Moved {label_file} to label/train/")
+
+        except Exception as e:
+            print(f"Error moving {file} to image/train/ and {label_file} to label/train/: {e}")
+
+    for file in val_files:
+        img_source_path = os.path.join(img_source_dir, file)
+        img_dest_path = os.path.join(img_val_dir, file)
+
+        label_file = os.path.splitext(file)[0] + '.txt'
+        label_source_path = os.path.join(label_source_dir, label_file)
+        label_dest_path = os.path.join(label_val_dir, label_file)
+        try:
+            shutil.move(img_source_path, img_dest_path)
+            print(f"Moved {file} to image/val/")
+            shutil.move(label_source_path, label_dest_path)
+            print(f"Moved {label_file} to label/val/")
+
+        except Exception as e:
+            print(f"Error moving {file} to image/val/ and {label_file} to label/val/: {e}")
+        
+
+def train_assistant_model(model_name):
+    img_source_dir = '../data/images/pretrain'
+    label_source_dir = '../data/labels/formatted'
+
+    img_train_dir = '../data/model_data/images/train'
+    img_val_dir = '../data/model_data/images/validation'
+
+    label_train_dir = '../data/model_data/labels/train'
+    label_val_dir = '../data/model_data/labels/validation'
+
+    weight_dir = "../models/current_assistant"
+    train_val_split(img_source_dir, label_source_dir, img_train_dir, label_train_dir, img_val_dir, label_val_dir)
+
+    model = YOLO("yolov8n.yaml")
+    results = model.train(
+        data = "../notebooks/data.yaml", 
+        epochs=30, 
+        imgsz=768, 
+        device=0, 
+        rect=True, 
+        project="../runs", 
+        name=f"{model_name}"
+    )
+
+    for weight in os.listdir(weight_dir):
+        shutil.move(os.path.join(weight_dir, weight), os.path.join("../models", weight))
+
+    weight_src_path = os.path.join("../runs", f"{model_name}", "weights", "best.pt")
+    weight_dst_path = os.path.join(weight_dir, f"{model_name}.pt")
+
+    shutil.move(weight_src_path, weight_dst_path)
+    
