@@ -1,0 +1,9 @@
+path: ../Red-Light-Runners/data/model_data
+train: images/train
+val: images/validation
+
+names:
+  0: NA
+  1: green_light
+  2: red_light
+  3: yellow_light
