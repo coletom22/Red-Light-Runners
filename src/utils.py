@@ -1,6 +1,8 @@
 import cv2
 import os
 import shutil
+import json
+
 from ultralytics import YOLO
 import sys
 from sklearn.model_selection import train_test_split
@@ -9,6 +11,7 @@ from sklearn.model_selection import train_test_split
 # variables
 # Standardized image width/height
 IMAGE_WIDTH, IMAGE_HEIGHT = 768, 448
+
 
 # function for converting rectangle points and class value to YOLO format
 def viewing_to_yolo(annotations, IMAGE_WIDTH, IMAGE_HEIGHT) -> list[dict]:
@@ -110,10 +113,38 @@ def reset_selection(annotations):
         ann['thickness'] = 1
     print("Annotations reset")
 
+# 
+def update_annotation_data(model_name, img_name, key, increment=1):
+    file_path = f'../annotation_meta_data/{model_name}.json'
+
+    if not os.path.exists(file_path):
+        data = {}
+    else:
+        try:
+            with open(f'../annotation_meta_data/{model_name}.json', 'r') as file:
+                data = json.load(file)
+        except (FileNotFoundError, json.JSONDecodeError):
+            print(f"Error with file {model_name}.json")
+            data = {}
+
+    if img_name not in data:
+        data[img_name] = {"total_annotations": 0}
+    
+    if key not in data[img_name]:
+        data[img_name][key] = 0
+    
+    data[img_name][key] += increment
+
+    with open(f'../annotation_meta_data/{model_name}.json', 'w') as file:
+        json.dump(data, file, indent = 4)
+
+    print(f"Updated {model_name}.json data successfully")
+
 # removes selected/'highlighted' (bbox with thickness 2)
-def remove_bbox(annotations):
+def remove_bbox(annotations, model_name, img_name):
     for ann in annotations[:]:
         if ann['thickness'] == 2:
+            update_annotation_data(model_name, img_name, 'rmv_' + ann['color'], 1)
             annotations.remove(ann)
     print(annotations)
 
