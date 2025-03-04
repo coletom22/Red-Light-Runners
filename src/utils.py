@@ -104,12 +104,13 @@ def dump_data():
     if os.path.exists(os.path.join(label_dir, 'validation.cache')):
         os.remove(os.path.join(label_dir, 'validation.cache'))
 
-
+# resets selected annotations to none
 def reset_selection(annotations):
     for ann in annotations:
         ann['thickness'] = 1
     print("Annotations reset")
 
+# removes selected/'highlighted' (bbox with thickness 2)
 def remove_bbox(annotations):
     for ann in annotations[:]:
         if ann['thickness'] == 2:
@@ -154,9 +155,10 @@ def train_val_split(img_source_dir, label_source_dir, img_train_dir, label_train
         except Exception as e:
             print(f"Error moving {file} to image/val/ and {label_file} to label/val/: {e}")
         
-
+# automatically called when enough new labeled images are in processed
+# trains a new model and inserts it as the new assistant for labeling
 def train_assistant_model(model_name):
-    img_source_dir = '../data/images/pretrain'
+    img_source_dir = '../data/images/processed'
     label_source_dir = '../data/labels/formatted'
 
     img_train_dir = '../data/model_data/images/train'
@@ -168,6 +170,7 @@ def train_assistant_model(model_name):
     weight_dir = "../models/current_assistant"
     train_val_split(img_source_dir, label_source_dir, img_train_dir, label_train_dir, img_val_dir, label_val_dir)
 
+    print(f"Training set size: {len(img_train_dir)} | Validation set size: {len(img_val_dir)}\n")
     model = YOLO("yolov8n.yaml")
     results = model.train(
         data = "../notebooks/data.yaml", 
@@ -179,11 +182,76 @@ def train_assistant_model(model_name):
         name=f"{model_name}"
     )
 
+    # any files that are in the current_assistant dir need to be moved to models/
     for weight in os.listdir(weight_dir):
         shutil.move(os.path.join(weight_dir, weight), os.path.join("../models", weight))
 
+    # the newly trained model is going to be set as the current_assistant
     weight_src_path = os.path.join("../runs", f"{model_name}", "weights", "best.pt")
     weight_dst_path = os.path.join(weight_dir, f"{model_name}.pt")
-
+    
     shutil.move(weight_src_path, weight_dst_path)
     
+
+# writes all the images being used in the training to a text file
+def track_dataset(model_name, training_dir):
+    training_dataset = os.listdir(training_dir)
+    with open("../models/meta_data/training_data_info.txt", 'a') as file:
+        file.write(f"{model_name}\n")
+        file.write(f"Size: {len(training_dataset)}\n")
+        file.write("\n".join(training_dataset))
+        file.write('\n')
+    print(f"Model: {model_name} dataset saved to '../models/meta_data/training_data_info.txt'\n")
+
+
+# Retrieves the latest training's dataset size
+def get_latest_dataset_size():
+    try:
+        with open("../models/meta_data/training_data_info.txt", 'r') as file:
+            lines = file.readlines()
+
+        if lines:
+            size_index = -1
+
+            for i in range(len(lines)-1, -1, -1):
+                if lines[i].startswith("Size:"):
+                    size_index = i
+                    break
+            if size_index != -1:
+                dataset_size = int(lines[size_index].strip().split(": ")[1])
+                return dataset_size
+        else:
+            return None
+    except FileNotFoundError:
+        print("The file for training data does not exist")
+        return None
+    
+
+# Opens the meta data text file and retrieves the most recently trained models meta data
+def get_latest_dataset_info():
+    try:
+        with open("../models/meta_data/training_data_info.txt", 'r') as file:
+            lines = file.readlines()
+
+        if lines:
+            size_index = -1
+
+            for i in range(len(lines)-1, -1, -1):
+                if lines[i].startswith("Size:"):
+                    size_index = i
+                    break
+            if size_index != -1:
+                model_name = lines[size_index-1].strip()
+                dataset_size = int(lines[size_index].strip().split(": ")[1])
+                dataset_files = lines[size_index+1 : size_index + 1 + dataset_size]
+                dataset_files = [file.strip() for file in dataset_files]
+                return model_name, dataset_size, dataset_files
+        else:
+            return None, None, None
+    except FileNotFoundError:
+        print("The file for training data does not exist")
+        return None, None, None
+    
+# CREATE STRATIFY FUNC THAT ENABLES MORE DIVERSE TRAINING
+def stratify():
+    print("strat")
