@@ -1,4 +1,4 @@
-path: ../Red-Light-Runners/data/model_data
+path: data/model_data
 train: images/train
 val: images/validation
 
