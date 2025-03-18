@@ -1,0 +1,74 @@
+{
+    "20250222_153541M_001568.jpg": {
+        "total_annotations": 3,
+        "pred_red_light": 0,
+        "pred_yellow_light": 0,
+        "pred_green_light": 6,
+        "red_light": 0,
+        "rmv_red_light": 0,
+        "yellow_light": 0,
+        "rmv_yellow_light": 0,
+        "green_light": 3,
+        "rmv_green_light": 0
+    },
+    "20250222_153541M_001569.jpg": {
+        "total_annotations": 0,
+        "pred_red_light": 0,
+        "pred_yellow_light": 0,
+        "pred_green_light": 3
+    },
+    "20250222_153541M_001914.jpg": {
+        "total_annotations": 5,
+        "pred_red_light": 1,
+        "pred_yellow_light": 0,
+        "pred_green_light": 2,
+        "red_light": 2,
+        "rmv_red_light": 0,
+        "yellow_light": 0,
+        "rmv_yellow_light": 0,
+        "green_light": 3,
+        "rmv_green_light": 0
+    },
+    "20250222_153541M_001915.jpg": {
+        "total_annotations": 5,
+        "pred_red_light": 1,
+        "pred_yellow_light": 0,
+        "pred_green_light": 2,
+        "red_light": 2,
+        "rmv_red_light": 0,
+        "yellow_light": 0,
+        "rmv_yellow_light": 0,
+        "green_light": 3,
+        "rmv_green_light": 0
+    },
+    "20250222_153541M_001916.jpg": {
+        "total_annotations": 5,
+        "pred_red_light": 1,
+        "pred_yellow_light": 0,
+        "pred_green_light": 2,
+        "red_light": 2,
+        "rmv_red_light": 0,
+        "yellow_light": 0,
+        "rmv_yellow_light": 0,
+        "green_light": 3,
+        "rmv_green_light": 0
+    },
+    "20250222_153541M_001917.jpg": {
+        "total_annotations": 5,
+        "pred_red_light": 1,
+        "pred_yellow_light": 0,
+        "pred_green_light": 1,
+        "red_light": 2,
+        "rmv_red_light": 0,
+        "yellow_light": 0,
+        "rmv_yellow_light": 0,
+        "green_light": 3,
+        "rmv_green_light": 0
+    },
+    "20250222_153541M_001918.jpg": {
+        "total_annotations": 0,
+        "pred_red_light": 1,
+        "pred_yellow_light": 0,
+        "pred_green_light": 1
+    }
+}
