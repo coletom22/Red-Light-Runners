@@ -1,8 +1,11 @@
 venv
 runs
+.env
+rndm_utils
 data/images
 data/labels
 data/model_data
 data/videos
 src/__pycache__
 images/result_videos
+utils/__pycache__
