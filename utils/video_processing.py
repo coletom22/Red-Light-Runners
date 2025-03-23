@@ -1,14 +1,16 @@
 import os
 import cv2
+import shutil
 from dotenv import load_dotenv
 
 from ultralytics import YOLO
 
 load_dotenv()
-IMAGE_WIDTH, IMAGE_HEIGHT = int(os.getenv("IMAGE_WIDTH"), 768), int(os.getenv("IMAGE_HEIGHT"), 448)
+
+IMAGE_WIDTH, IMAGE_HEIGHT = 768, 448
 
 # function for converting a video into individual frames and storing in separate directory
-def video_to_frames(video_path, target_directory, video_name):
+def video_to_frames(video_path, target_directory, video_name, output_path):
     # Open video file
     cap = cv2.VideoCapture(video_path)
     
@@ -37,6 +39,8 @@ def video_to_frames(video_path, target_directory, video_name):
     
     cap.release()
     print(f"Extracted {frame_count} frames at {fps} FPS.")
+    shutil.move(video_path, output_path)
+    print(f"Moved {video_name} to processed")
 
 
 # function similar to video_to_frames except used for extracting specific frames for testing
@@ -115,8 +119,8 @@ def predict_video(vid_path, output_path, model_path, thresh=0.0):
 
             if score > threshold:
                 cv2.rectangle(frame, (int(x1), int(y1)), (int(x2), int(y2)), class_color[results.names[int(class_id)]], 4)
-                cv2.putText(frame, results.names[int(class_id)].upper(), (int(x1), int(y1 - 10)),
-                            cv2.FONT_HERSHEY_SIMPLEX, 1.3, class_color[results.names[int(class_id)]], 3, cv2.LINE_AA)
+                cv2.putText(frame, str(100 * round(score, 3)), (int(x1), int(y1 - 10)),
+                            cv2.FONT_HERSHEY_SIMPLEX, 1.1, class_color[results.names[int(class_id)]], 2, cv2.LINE_AA)
             
         out.write(frame)
         ret, frame = cap.read()
