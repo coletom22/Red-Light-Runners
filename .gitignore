@@ -1,6 +1,7 @@
 venv
 runs
 .env
+.vscode
 rndm_utils
 data/images
 data/labels
