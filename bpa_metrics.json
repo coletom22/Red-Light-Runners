@@ -1,0 +1,422 @@
+[
+    {
+        "batch_id": "001",
+        "bpa_model": "2025-03-30_19-18-53.pt",
+        "comparison_model": "2025-03-27_17-25-00.pt",
+        "bpa_metrics": {
+            "precision": 0.9636,
+            "recall": 0.44,
+            "f1_score": 0.6041,
+            "TP": 1404,
+            "FP": 53,
+            "FN": 1787
+        },
+        "comparison_metrics": {
+            "precision": 0.9399,
+            "recall": 0.3576,
+            "f1_score": 0.518,
+            "TP": 1141,
+            "FP": 73,
+            "FN": 2050
+        }
+    },
+    {
+        "batch_id": "002",
+        "bpa_model": "2025-03-31_16-23-12.pt",
+        "comparison_model": "2025-03-27_17-25-00.pt",
+        "bpa_metrics": {
+            "precision": 0.893,
+            "recall": 0.2514,
+            "f1_score": 0.3923,
+            "TP": 968,
+            "FP": 116,
+            "FN": 2883
+        },
+        "comparison_metrics": {
+            "precision": 0.8413,
+            "recall": 0.1514,
+            "f1_score": 0.2566,
+            "TP": 583,
+            "FP": 110,
+            "FN": 3268
+        }
+    },
+    {
+        "batch_id": "003",
+        "bpa_model": "2025-04-07_22-58-23.pt",
+        "comparison_model": "2025-03-27_17-25-00.pt",
+        "bpa_metrics": {
+            "precision": 0.9231,
+            "recall": 0.0171,
+            "f1_score": 0.0337,
+            "TP": 24,
+            "FP": 2,
+            "FN": 1376
+        },
+        "comparison_metrics": {
+            "precision": 0.7937,
+            "recall": 0.0357,
+            "f1_score": 0.0684,
+            "TP": 50,
+            "FP": 13,
+            "FN": 1350
+        }
+    },
+    {
+        "batch_id": "004",
+        "bpa_model": "2025-04-08_21-45-35.pt",
+        "comparison_model": "2025-03-27_17-25-00.pt",
+        "bpa_metrics": {
+            "precision": 0.9839,
+            "recall": 0.5598,
+            "f1_score": 0.7136,
+            "TP": 735,
+            "FP": 12,
+            "FN": 578
+        },
+        "comparison_metrics": {
+            "precision": 0.9701,
+            "recall": 0.2719,
+            "f1_score": 0.4247,
+            "TP": 357,
+            "FP": 11,
+            "FN": 956
+        }
+    },
+    {
+        "batch_id": "005",
+        "bpa_model": "2025-04-10_16-52-23.pt",
+        "comparison_model": "2025-03-27_17-25-00.pt",
+        "bpa_metrics": {
+            "precision": 0.9718,
+            "recall": 0.561,
+            "f1_score": 0.7113,
+            "TP": 1205,
+            "FP": 35,
+            "FN": 943
+        },
+        "comparison_metrics": {
+            "precision": 0.9648,
+            "recall": 0.4213,
+            "f1_score": 0.5865,
+            "TP": 905,
+            "FP": 33,
+            "FN": 1243
+        }
+    },
+    {
+        "batch_id": "006",
+        "bpa_model": "2025-04-10_20-57-48.pt",
+        "comparison_model": "2025-03-27_17-25-00.pt",
+        "bpa_metrics": {
+            "precision": 0.9643,
+            "recall": 0.8598,
+            "f1_score": 0.909,
+            "TP": 2428,
+            "FP": 90,
+            "FN": 396
+        },
+        "comparison_metrics": {
+            "precision": 0.9667,
+            "recall": 0.6686,
+            "f1_score": 0.7905,
+            "TP": 1888,
+            "FP": 65,
+            "FN": 936
+        }
+    },
+    {
+        "batch_id": "007",
+        "bpa_model": "2025-04-11_13-35-06.pt",
+        "comparison_model": "2025-04-10_23-51-24.pt",
+        "bpa_metrics": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1_score": 1.0,
+            "TP": 3000,
+            "FP": 0,
+            "FN": 0
+        },
+        "comparison_metrics": {
+            "precision": 0.9928,
+            "recall": 0.831,
+            "f1_score": 0.9047,
+            "TP": 2493,
+            "FP": 18,
+            "FN": 507
+        }
+    },
+    {
+        "batch_id": "008",
+        "bpa_model": "2025-04-11_15-47-49.pt",
+        "comparison_model": "2025-04-10_23-51-24.pt",
+        "bpa_metrics": {
+            "precision": 0.5814,
+            "recall": 0.5452,
+            "f1_score": 0.5627,
+            "TP": 1621,
+            "FP": 1167,
+            "FN": 1352
+        },
+        "comparison_metrics": {
+            "precision": 0.8719,
+            "recall": 0.6522,
+            "f1_score": 0.7462,
+            "TP": 1939,
+            "FP": 285,
+            "FN": 1034
+        }
+    },
+    {
+        "batch_id": "009",
+        "bpa_model": "2025-04-12_11-22-56.pt",
+        "comparison_model": "2025-04-10_23-51-24.pt",
+        "bpa_metrics": {
+            "precision": 0.803,
+            "recall": 0.7005,
+            "f1_score": 0.7482,
+            "TP": 2287,
+            "FP": 561,
+            "FN": 978
+        },
+        "comparison_metrics": {
+            "precision": 0.8852,
+            "recall": 0.7436,
+            "f1_score": 0.8083,
+            "TP": 2428,
+            "FP": 315,
+            "FN": 837
+        }
+    },
+    {
+        "batch_id": "010",
+        "bpa_model": "2025-04-12_17-28-51.pt",
+        "comparison_model": "2025-04-10_23-51-24.pt",
+        "bpa_metrics": {
+            "precision": 0.9472,
+            "recall": 0.7912,
+            "f1_score": 0.8622,
+            "TP": 2528,
+            "FP": 141,
+            "FN": 667
+        },
+        "comparison_metrics": {
+            "precision": 0.9572,
+            "recall": 0.784,
+            "f1_score": 0.862,
+            "TP": 2505,
+            "FP": 112,
+            "FN": 690
+        }
+    },
+    {
+        "batch_id": "011",
+        "bpa_model": "2025-04-12_20-53-37.pt",
+        "comparison_model": "2025-04-10_23-51-24.pt",
+        "bpa_metrics": {
+            "precision": 0.9697,
+            "recall": 0.8082,
+            "f1_score": 0.8816,
+            "TP": 3009,
+            "FP": 94,
+            "FN": 714
+        },
+        "comparison_metrics": {
+            "precision": 0.9433,
+            "recall": 0.7156,
+            "f1_score": 0.8138,
+            "TP": 2664,
+            "FP": 160,
+            "FN": 1059
+        }
+    },
+    {
+        "batch_id": "012",
+        "bpa_model": "2025-04-15_12-03-42.pt",
+        "comparison_model": "2025-04-10_23-51-24.pt",
+        "bpa_metrics": {
+            "precision": 0.9973,
+            "recall": 0.9703,
+            "f1_score": 0.9836,
+            "TP": 4025,
+            "FP": 11,
+            "FN": 123
+        },
+        "comparison_metrics": {
+            "precision": 0.9979,
+            "recall": 0.925,
+            "f1_score": 0.9601,
+            "TP": 3837,
+            "FP": 8,
+            "FN": 311
+        }
+    },
+    {
+        "batch_id": "013",
+        "bpa_model": "2025-04-15_23-56-24.pt",
+        "comparison_model": "2025-04-10_23-51-24.pt",
+        "bpa_metrics": {
+            "precision": 0.9977,
+            "recall": 0.9985,
+            "f1_score": 0.9981,
+            "TP": 3941,
+            "FP": 9,
+            "FN": 6
+        },
+        "comparison_metrics": {
+            "precision": 0.9995,
+            "recall": 0.979,
+            "f1_score": 0.9891,
+            "TP": 3864,
+            "FP": 2,
+            "FN": 83
+        }
+    },
+    {
+        "batch_id": "014",
+        "bpa_model": "2025-04-16_14-33-11.pt",
+        "comparison_model": "2025-04-10_23-51-24.pt",
+        "bpa_metrics": {
+            "precision": 0.8387,
+            "recall": 0.82,
+            "f1_score": 0.8292,
+            "TP": 1758,
+            "FP": 338,
+            "FN": 386
+        },
+        "comparison_metrics": {
+            "precision": 0.7358,
+            "recall": 0.7327,
+            "f1_score": 0.7343,
+            "TP": 1571,
+            "FP": 564,
+            "FN": 573
+        }
+    },
+    {
+        "batch_id": "015",
+        "bpa_model": "2025-04-16_16-58-36.pt",
+        "comparison_model": "2025-04-10_23-51-24.pt",
+        "bpa_metrics": {
+            "precision": 0.775,
+            "recall": 0.7363,
+            "f1_score": 0.7552,
+            "TP": 3276,
+            "FP": 951,
+            "FN": 1173
+        },
+        "comparison_metrics": {
+            "precision": 0.779,
+            "recall": 0.6775,
+            "f1_score": 0.7247,
+            "TP": 3014,
+            "FP": 855,
+            "FN": 1435
+        }
+    },
+    {
+        "batch_id": "016",
+        "bpa_model": "2025-04-17_13-01-06.pt",
+        "comparison_model": "2025-04-10_23-51-24.pt",
+        "bpa_metrics": {
+            "precision": 0.7706,
+            "recall": 0.4729,
+            "f1_score": 0.5861,
+            "TP": 1162,
+            "FP": 346,
+            "FN": 1295
+        },
+        "comparison_metrics": {
+            "precision": 0.7392,
+            "recall": 0.4477,
+            "f1_score": 0.5577,
+            "TP": 1100,
+            "FP": 388,
+            "FN": 1357
+        }
+    },
+    {
+        "batch_id": "017",
+        "bpa_model": "2025-04-24_14-35-58.pt",
+        "comparison_model": "2025-04-10_23-51-24.pt",
+        "bpa_metrics": {
+            "precision": 0.9554,
+            "recall": 0.8869,
+            "f1_score": 0.9199,
+            "TP": 2079,
+            "FP": 97,
+            "FN": 265
+        },
+        "comparison_metrics": {
+            "precision": 0.9313,
+            "recall": 0.7577,
+            "f1_score": 0.8356,
+            "TP": 1776,
+            "FP": 131,
+            "FN": 568
+        }
+    },
+    {
+        "batch_id": "018",
+        "bpa_model": "2025-04-24_23-00-22.pt",
+        "comparison_model": "2025-04-10_23-51-24.pt",
+        "bpa_metrics": {
+            "precision": 0.863,
+            "recall": 0.817,
+            "f1_score": 0.8394,
+            "TP": 2911,
+            "FP": 462,
+            "FN": 652
+        },
+        "comparison_metrics": {
+            "precision": 0.9332,
+            "recall": 0.6935,
+            "f1_score": 0.7957,
+            "TP": 2471,
+            "FP": 177,
+            "FN": 1092
+        }
+    },
+    {
+        "batch_id": "019",
+        "bpa_model": "2025-04-25_11-53-06.pt",
+        "comparison_model": "2025-04-10_23-51-24.pt",
+        "bpa_metrics": {
+            "precision": 0.7937,
+            "recall": 0.8375,
+            "f1_score": 0.815,
+            "TP": 2736,
+            "FP": 711,
+            "FN": 531
+        },
+        "comparison_metrics": {
+            "precision": 0.9715,
+            "recall": 0.7919,
+            "f1_score": 0.8725,
+            "TP": 2587,
+            "FP": 76,
+            "FN": 680
+        }
+    },
+    {
+        "batch_id": "020",
+        "bpa_model": "2025-05-12_15-42-04.pt",
+        "comparison_model": "2025-04-10_23-51-24.pt",
+        "bpa_metrics": {
+            "precision": 0.9276,
+            "recall": 0.791,
+            "f1_score": 0.8538,
+            "TP": 999,
+            "FP": 78,
+            "FN": 264
+        },
+        "comparison_metrics": {
+            "precision": 0.8931,
+            "recall": 0.6548,
+            "f1_score": 0.7556,
+            "TP": 827,
+            "FP": 99,
+            "FN": 436
+        }
+    }
+]
